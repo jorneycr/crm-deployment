@@ -11,6 +11,9 @@ const cors = require('cors');
 //crear servidor
 const app = express();
 
+//carpeta publica
+app.use(express.static('uploads'));
+
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.BD_URL,{
 // mongoose.connect('mongodb://localhost/restapis', {
@@ -41,9 +44,6 @@ app.use(cors(corsOptions));
 
 //rutas de la app
 app.use('/', routes());
-
-//carpeta publica
-app.use(express.static('uploads'));
 
 //puerto
 // app.listen(5000);
