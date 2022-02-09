@@ -15,7 +15,7 @@ const app = express();
 app.use(express.static('uploads'));
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.BD_URL,{
+mongoose.connect("mongodb+srv://crm:V9Rd6ec0xEeaZHMI@crm.78zam.mongodb.net/restapis?retryWrites=true&w=majority",{
 // mongoose.connect('mongodb://localhost/restapis', {
     useNewUrlParser: true
 });
@@ -39,7 +39,7 @@ const corsOptions = {
     }
 }
 
-//habilitar cors
+// //habilitar cors
 app.use(cors(corsOptions));
 
 //rutas de la app

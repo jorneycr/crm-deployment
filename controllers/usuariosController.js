@@ -7,6 +7,7 @@ exports.registrarUsuario = async (req, res) => {
 
     //leer los datos del usuario y colocarlos en Usuarios
     const usuario = new Usuario(req.body);
+    console.log(req.body);
     usuario.password = await bcrypt.hash(req.body.password, 12);
 
     try {
@@ -22,7 +23,6 @@ exports.autenticarUsuario = async (req, res, next) => {
     //buscar el usuario
     const {email, password}= req.body;
     const usuario = await Usuarios.findOne({email});
-
     if(!usuario){
         //si el usuario no existe
         await res.status(401).json({mensaje:'Ese usuario no existe'});

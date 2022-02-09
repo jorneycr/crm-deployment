@@ -17,107 +17,107 @@ module.exports = function () {
     /**Clientes */
     //agregar los clientes via post
     router.post('/clientes', 
-        auth,
+        // auth,
         clienteController.nuevoCliente
     );
 
     //obtener clientes
     router.get('/clientes',
-        auth,
+        // auth,
         clienteController.mostrarClientes
     );
 
     //muestra un cliente especifico
     router.get('/clientes/:idCliente',
-        auth,
+        // auth,
         clienteController.mostrarCliente
     );
 
     //actualizar cliente
     router.put('/clientes/:idCliente', 
-        auth,
+        // auth,
         clienteController.actualizarCliente
     );
 
     //eliminar por cliente
     router.delete('/clientes/:idCliente',
-        auth,
+        // auth,
         clienteController.eliminarCliente
     );
 
     /**Productos */
     //nuevos productos
     router.post('/productos',
-        auth,
+        // auth,
         productosController.subirArchivo,
         productosController.nuevoProducto
     );
 
     //muestra todos los productos
     router.get('/productos',
-        auth,
+        // auth,
         productosController.mostrarProductos
     );
 
     //mostrar producto por id
     router.get('/productos/:idProducto', 
-        auth,
+        // auth,
         productosController.mostrarProducto
     );
 
     //actualizar productos
     router.put('/productos/:idProducto',
-        auth,
+        // auth,
         productosController.subirArchivo,
         productosController.actualizarProducto
     )
 
     //eliminar producto
     router.delete('/productos/:idProducto', 
-        auth,
+        // auth,
         productosController.eliminarProducto
     );
 
     router.post('/productos/busqueda/:query', 
-        auth,
+        // auth,
         productosController.buscarProducto
     );
 
     /**Pedidos */
     //nuevo pedido
     router.post('/pedidos/nuevo/:idUsuario', 
-        auth,
+        // auth,
         pedidosController.nuevoPedido
     );
 
     //mostrar nuevos pedidos
     router.get('/pedidos', 
-        auth,
+        // auth,
         pedidosController.mostrarPedidos
     );
 
     //mostrar un pedido por su id
     router.get('/pedidos/:idPedido', 
-        auth,
+        // auth,
         pedidosController.mostrarPedido
     );
 
     //actualizar pedidos
     router.put('/pedidos/:idPedido', 
-        auth,
+        // auth,
         pedidosController.actualizarPedido
     );
 
     //eliminar un pedido por su id
     router.delete('/pedidos/:idPedido', 
-        auth,
+        // auth,
         pedidosController.eliminarPedido
     );
-
+            
 
     //Usuarios
     router.post('/crear-cuenta',
-        auth,
+        // auth,
         usuariosController.registrarUsuario
     );
 
